@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f4aa8;
+  background: #ffffff;
+}
+
+/* ===== HEADER OFFSET ===== */
+.page {
+  padding: 120px 80px 80px;
+}
+
+/* ===== TITLE ===== */
+.page h1 {
+  font-size: 64px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+/* ===== IMAGE ===== */
+.about-image {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== TEXT ===== */
+.about-text {
+  max-width: 900px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4a67b1;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+}
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    border-top: 2px solid #2f56ff;
+    border-bottom: 2px solid #2f56ff;
+}
+
+.footer-left {
+    padding: 80px 70px;
+}
+
+.brand {
+    font-size: 20px;
+    margin-bottom: 160px;
+}
+
+.footer-left h1 {
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.footer-right {
+    padding: 80px 70px;
+    border-left: 2px solid #2f56ff;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+.socials {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.socials span {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.contact p {
+    margin-bottom: 10px;
+}
+
+.address p {
+    margin-bottom: 8px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.links a {
+    color: #123c8c;
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero-left h1 {
+    font-size: 56px;
+  }
+
+  .hero-right p {
+    font-size: 16px;
+  }
+
+  .hero-right button {
+    width: 100%;
+    text-align: center;
+  }
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .page {
+    padding: 100px 40px 60px;
+  }
+
+  .page h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 80px 20px 40px;
+  }
+
+  .page h1 {
+    font-size: 36px;
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+
+  .about-image {
+    border-radius: 20px;
+  }
+}
+
