@@ -1,183 +1,383 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #ffffff;
-    color: #123f8a;
-}
+        /* ===== HEADER STYLES ===== */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 25px 60px;
+            background: #ffffff;
+            position: relative;
+        }
 
-header {
-    width: 100%;
-    padding: 25px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2f55d4;
+            z-index: 1001;
+        }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 22px;
-    font-weight: 600;
-}
+        /* ===== BURGER ICON (Hidden on Desktop) ===== */
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+        }
 
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #123f8a;
-    font-size: 18px;
-}
+        .burger span {
+            width: 28px;
+            height: 3px;
+            background: #2f55d4;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
 
-/* ===== TITLE ===== */
-.page h1 {
-  font-size: 64px;
-  font-weight: 300;
-  margin-bottom: 40px;
-}
+        /* ===== NAVIGATION (Desktop) ===== */
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
 
-/* ===== IMAGE ===== */
-.about-image {
-  width: 100%;
-  max-width: 1200px;
-  border-radius: 30px;
-  overflow: hidden;
-  margin-bottom: 40px;
-}
+        .nav a {
+            text-decoration: none;
+            color: #2f55d4;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
 
-.about-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+        .nav a:hover {
+            color: #0062ff;
+        }
 
-/* ===== TEXT ===== */
-.about-text {
-  max-width: 900px;
-  font-size: 15px;
-  line-height: 1.7;
-  color: #4a67b1;
-}
+        /* ===== DESKTOP LOGIN ===== */
+        .desktop-login {
+            display: block;
+        }
 
-.about-text p {
-  margin-bottom: 20px;
-}
-.footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 100vh;
-    border-top: 2px solid #2f56ff;
-    border-bottom: 2px solid #2f56ff;
-}
+        .icons {
+            display: flex;
+            gap: 20px;
+            font-size: 18px;
+        }
 
-.footer-left {
-    padding: 80px 70px;
-}
+        .icons .Login {
+            color: #2f55d4;
+            cursor: pointer;
+        }
 
-.brand {
-    font-size: 20px;
-    margin-bottom: 160px;
-}
+        /* About Section */
+        .about {
+            padding: 60px;
+        }
 
-.footer-left h1 {
-    font-size: 72px;
-    font-weight: 300;
-    line-height: 1.2;
-}
+        .about h1 {
+            font-size: 48px;
+            color: #0062ff;
+            margin-bottom: 30px;
+        }
 
-.footer-right {
-    padding: 80px 70px;
-    border-left: 2px solid #2f56ff;
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-}
-.socials {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-}
+        /* Image */
+        .about-image {
+            max-width: 1000px;
+            margin-bottom: 30px;
+        }
 
-.socials span {
-    width: 32px;
-    height: 32px;
-    border: 2px solid #000;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
+        .about-image img {
+            width: 100%;
+            border-radius: 25px;
+            object-fit: cover;
+        }
 
-.contact p {
-    margin-bottom: 10px;
-}
+        /* Text */
+        .about-text {
+            max-width: 900px;
+        }
 
-.address p {
-    margin-bottom: 8px;
-}
+        .about-text p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #6c7aa1;
+            margin-bottom: 20px;
+        }
 
-.links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+        .footer {
+            border-top: 2px solid #2f55d4;
+            border-bottom: 2px solid #2f55d4;
+            padding: 80px 60px;
+        }
 
-.links a {
-    color: #123c8c;
-    text-decoration: underline;
-    font-size: 15px;
-}
+        .footer-container {
+            display: flex;
+            gap: 60px;
+        }
 
-@media (max-width: 576px) {
-  .header {
-    padding: 15px 20px;
-  }
+        .footer-left {
+            flex: 1;
+        }
 
-  .hero {
-    padding: 40px 20px;
-  }
+        .footer-left .brand {
+            color: #2f55d4;
+            font-size: 22px;
+            margin-bottom: 120px;
+        }
 
-  .hero-left h1 {
-    font-size: 56px;
-  }
+        .footer-left h2 {
+            color: #2f55d4;
+            font-size: 64px;
+            line-height: 1.1;
+            font-weight: 500;
+        }
 
-  .hero-right p {
-    font-size: 16px;
-  }
+        .footer-divider {
+            width: 2px;
+            background: #2f55d4;
+        }
 
-  .hero-right button {
-    width: 100%;
-    text-align: center;
-  }
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-  .page {
-    padding: 100px 40px 60px;
-  }
+        .footer-right {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+        }
 
-  .page h1 {
-    font-size: 48px;
-  }
-}
+        .contact p,
+        .address p {
+            color: #2f55d4;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
 
-@media (max-width: 600px) {
-  .page {
-    padding: 80px 20px 40px;
-  }
+        .social {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
 
-  .page h1 {
-    font-size: 36px;
-  }
+        .social img {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+        }
 
-  .about-text {
-    font-size: 14px;
-  }
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-  .about-image {
-    border-radius: 20px;
-  }
+        .links a {
+            color: #2f55d4;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px 30px;
+            }
+
+            /* Show burger icon on mobile */
+            .burger {
+                display: flex;
+            }
+
+            /* Hide desktop login */
+            .desktop-login {
+                display: none;
+            }
+
+            /* ===== MOBILE NAVIGATION ===== */
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: #ffffff;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 30px 30px;
+                gap: 0;
+                box-shadow: -2px 0 15px rgba(0, 0, 0, 0.15);
+                transition: right 0.3s ease;
+                z-index: 1000;
+                overflow-y: auto;
+            }
+
+            /* Active state - menu visible */
+            .nav.active {
+                right: 0;
+            }
+
+            .nav a {
+                font-size: 20px;
+                width: 100%;
+                padding: 18px 0;
+                border-bottom: 1px solid #e8eef5;
+            }
+
+            .nav a:last-child {
+                border-bottom: none;
+            }
+
+            /* ===== BURGER ANIMATION ===== */
+            .burger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(9px, 9px);
+            }
+
+            .burger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .burger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(9px, -9px);
+            }
+
+            .burger.active span:nth-child(4) {
+                opacity: 0;
+            }
+
+            /* ===== OVERLAY ===== */
+            body.menu-open::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                animation: fadeIn 0.3s ease;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            /* About Section Mobile */
+            .about {
+                padding: 30px 20px;
+            }
+
+            .about h1 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+
+            .about-image {
+                margin-bottom: 20px;
+            }
+
+            .about-image img {
+                border-radius: 15px;
+            }
+
+            .about-text p {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            /* Footer Mobile */
+            .footer {
+                padding: 40px 20px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .footer-left .brand {
+                margin-bottom: 20px;
+                font-size: 18px;
+            }
+
+            .footer-left h2 {
+                font-size: 32px;
+            }
+
+            .footer-divider {
+                width: 100%;
+                height: 2px;
+            }
+
+            .footer-right {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .contact p,
+            .address p {
+                font-size: 14px;
+            }
+
+            .social {
+                gap: 10px;
+            }
+
+            .social img {
+                width: 28px;
+                height: 28px;
+            }
+
+            .links a {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            /* Extra small screens optimization */
+            .header {
+                padding: 12px 15px;
+            }
+
+            .logo {
+                font-size: 16px;
+            }
+
+            .nav a {
+                font-size: 14px;
+            }
+
+            .about {
+                padding: 20px 15px;
+            }
+
+            .about h1 {
+                font-size: 28px;
+            }
+
+            .about-text p {
+                font-size: 13px;
+            }
+
+            .footer {
+                padding: 30px 15px;
+            }
+
+            .footer-left h2 {
+                font-size: 28px;
+            }
+
+            .contact p,
+            .address p,
+            .links a {
+                font-size: 13px;
+            }
+        }

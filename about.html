@@ -7,42 +7,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-    <header>
-            <span>M. Jacobs</span>
+     <header class="header">
+        <span class="logo">M. Jacobs</span>
+
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-            <nav>
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="book-online.html">Book Online</a>
-            </nav>
-        <div class="icons">
+
+        <nav class="nav" id="nav">
+            <a href="./home.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./contact.html">Contact</a>
+            <a href="./book-online.html">Book Online</a>
+        </nav>
+
+        <div class="icons desktop-login">
             <span class="Login">Log In</span>
         </div>
     </header>
-
-<main class="container">
+<section class="about">
     <h1>About</h1>
 
-    <div class="image-box">
-        <img src="//static.wixstatic.com/media/11062b_6971f5e9e5fc423dba2255749fc409cf~mv2.jpg/v1/fill/w_1504,h_1228,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_6971f5e9e5fc423dba2255749fc409cf~mv2.jpg">
+    <div class="about-image">
+      <img src="https://static.wixstatic.com/media/11062b_6971f5e9e5fc423dba2255749fc409cf~mv2.jpg/v1/fill/w_1504,h_1228,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_6971f5e9e5fc423dba2255749fc409cf~mv2.jpg" alt="">
     </div>
 
-    <div class="text">
-        <p>
-            Our customized physical fitness programs are designed to help you build strength,
-            enhance endurance, and improve flexibility, all while prioritizing your overall
-            well-being. Whether you're an athlete looking to boost performance or someone
-            aiming to feel healthier and more energized, our certified trainers are here to
-            support you every step of the way.
-        </p>
+    <div class="about-text">
+      <p>
+        Our customized physical fitness programs are designed to help you build
+        strength, enhance endurance, and improve flexibility, all while prioritizing
+        your overall well-being. Whether you're an athlete looking to boost performance
+        or someone aiming to feel healthier and more energized, our certified trainers
+        are here to support you every step of the way.
+      </p>
 
-        <p>
-            We take a comprehensive approach to health and wellness by focusing not just on
-            fitness but also on injury prevention and recovery. Utilizing methods like Pilates
-            and functional movement assessments, our trainers identify your unique needs and
-            create tailored workouts that promote stability, mobility, and resilience.
-        </p>
+      <p>
+        We take a comprehensive approach to health and wellness by focusing not just on
+        fitness but also on injury prevention and recovery. By combining proven techniques
+        with compassionate coaching, we empower you to reach your full potential while
+        maintaining a balanced and injury-free lifestyle.
+      </p>
     </div>
+  </section>
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <p class="brand">M. Jacobs</p>
+      <h2>Your Fitness<br>Partner</h2>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-right">
+      <div class="contact">
+        <div class="social">
+          <img src="https://static.wixstatic.com/media/e1aa082f7c07471…quality_auto/e1aa082f7c0747168d9cf43e77046142.png" alt="">
+          <img src="https://static.wixstatic.com/media/4057345bcf57474…quality_auto/4057345bcf57474b96976284050c00df.png" alt="">
+          <img src="https://static.wixstatic.com/media/45bce1d726f64f1…quality_auto/45bce1d726f64f1999c49feae57f6298.png" alt="">
+        </div>
+        <p>123-456-7890</p>
+        <p>info@mysite.com</p>
+      </div>
+      <div class="address">
+        <p>500 Terry Francine St.</p>
+        <p>San Francisco, CA 94158</p>
+      </div>
+      <div class="links">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">Accessibility Statement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+        // Get elements
+        const burger = document.getElementById('burger');
+        const nav = document.getElementById('nav');
+        const body = document.body;
+
+        // Toggle menu function
+        function toggleMenu() {
+            burger.classList.toggle('active');
+            nav.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+
+        // Burger click event
+        burger.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = nav.contains(event.target);
+            const isClickOnBurger = burger.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnBurger && nav.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        // Close menu when clicking on a nav link
+        const navLinks = nav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Close menu on window resize if screen becomes larger
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && nav.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    </script>
 </head>
 </body>
